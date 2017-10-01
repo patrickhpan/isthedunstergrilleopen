@@ -16,7 +16,7 @@ const OPEN = __dirname + '/open.html',
 // Initialize express with body parser and logging
 const app = express();
 app.use(bp.urlencoded({ extended: true }));
-app.use(morgan('tiny'));
+app.use(morgan('common'));
 
 // Send index.html at /
 app.get('/', (req, res) => res.sendFile(
