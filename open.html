@@ -20,12 +20,17 @@
         <script>
             const bgClasses = ["fries", "mozz", "chicken"];
             const mainClasses = document.getElementById("main").classList;
+
             let counter = 0;
-            const bgLoop = setInterval(() => {
-                mainClasses.remove(bgClasses[counter % 3]);
+            const numClasses = bgClasses.length;
+
+            const bgUpdate = () => {
+                mainClasses.remove(bgClasses[counter]);
                 counter++;
-                mainClasses.add(bgClasses[counter % 3]);
-            }, 4000)
+                counter %= numClasses
+                mainClasses.add(bgClasses[counter]);
+            }
+            const bgLoop = setInterval(bgUpdate, 4000)
 
             document.addEventListener("DOMContentLoaded", () => {
                 bgClasses.forEach(img => {
