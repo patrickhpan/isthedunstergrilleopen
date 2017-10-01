@@ -26,6 +26,14 @@
                 counter++;
                 mainClasses.add(bgClasses[counter % 3]);
             }, 2000)
+
+            document.addEventListener("DOMContentLoaded", () => {
+                bgClasses.forEach(img => {
+                    console.log(img)
+                    let image = new Image()
+                    image.src = `/${img}.jpg`;
+                })
+            })
         </script>
     </body>
 </html>
