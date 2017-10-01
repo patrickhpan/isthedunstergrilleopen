@@ -17,12 +17,17 @@ body {
     justify-content: flex-start;
 }
 
-#header {
-    display: none;
+#header, #footer {
     flex: none;
-    font-size: 2em;
     line-height: 1.5em;
     text-align: center;
+    background-color: black;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 #main {
