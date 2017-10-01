@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>GRILLE ADMIN</title>
+        <link rel="stylesheet" href="/style.css">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63365220-5"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)};
+            gtag('js', new Date());
+            gtag('config', 'UA-63365220-5');
+        </script>
+    </head>
+    <body>
+        <div id="header">Dunster Grille Admin</div>
+        <div id="main">
+            <form action="/status" method='post'>
+                <div id="form-error">Admin</div><br />
+                <input type="password" name="password" id="password" placeholder="Password:" />
+                <input type="radio" name="open" value="true" checked>Open</input>
+                <input type="radio" name="open" value="false">Closed</input>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+        <script>
+            if (window.location.href.match(/fail=true/ig)) {
+                document.getElementById('form-error').innerText = 'Wrong password.'
+            }
+        </script>
+    </body>
+</html>
